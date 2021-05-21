@@ -9,6 +9,15 @@ img {
   max-width: 100%;
 }
 
+
+body {
+  min-width: $min-width;
+  font-family: "Styrene A Web", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 19.2px;
+  color: $text-basic-light;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -24,14 +33,18 @@ img {
 
 .container {
   margin: 0 auto;
-  padding: 0 20px;
-  max-width: 600px;
+  padding: 0 15px;
+  max-width: $container-mobile;
 }
 
 
 @media (min-width: $desktop-width) {
+  body {
+    color: $text-basic;
+  }
+
   .container {
-    padding: 0 64px;
-    max-width: 866px;
+    padding: 0 77px;
+    max-width: $container-desktop;
   }
 }

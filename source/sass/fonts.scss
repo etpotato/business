@@ -1,43 +1,43 @@
 @font-face {
-  font-family: "Consolas";
+  font-family: "Styrene A Web";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   font-display: swap;
-  src: local("Consolas"),
-    local("Consolas-Regular"),
-    url("../fonts/consolas-400.woff2") format("woff2"),
-    url("../fonts/consolas-400.woff") format("woff");
+  src: local("Styrene A Web"),
+    local("StyreneAWeb-Light"),
+    url("../fonts/styreneaweb-300.woff2") format("woff2"),
+    url("../fonts/styreneaweb-300.woff") format("woff");
 }
 
 @font-face {
-  font-family: "Consolas";
+  font-family: "Styrene A Web";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Styrene A Web"),
+    local("StyreneAWeb-Regular"),
+    url("../fonts/styreneaweb-400.woff2") format("woff2"),
+    url("../fonts/styreneaweb-400.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Styrene A Web";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("Styrene A Web"),
+    local("StyreneAWeb-Medium"),
+    url("../fonts/styreneaweb-500.woff2") format("woff2"),
+    url("../fonts/styreneaweb-500.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Styrene A Web";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: local("Consolas Bold"),
-    local("Consolas-Bold"),
-    url("../fonts/consolas-700.woff2") format("woff2"),
-    url("../fonts/consolas-700.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Open Sans";
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: local("Open Sans"),
-    local("OpenSans-Italic"),
-    url("../fonts/opensans-italic-400.woff2") format("woff2"),
-    url("../fonts/opensans-italic-400.woff") format("woff");
-}
-
-@font-face {
-  font-family: "SegoeUI";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local("SegoeUI"),
-    local("SegoeUI-Regular"),
-    url("../fonts/segoeui-400.woff2") format("woff2"),
-    url("../fonts/segoeui-400.woff") format("woff");
+  src: local("Styrene A Web"),
+    local("StyreneAWeb-Bold"),
+    url("../fonts/styreneaweb-700.woff2") format("woff2"),
+    url("../fonts/styreneaweb-700.woff") format("woff");
 }

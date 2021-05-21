@@ -1,3 +1,10 @@
 .page {
-  min-width: $min-width;
+  padding: 28px 0 47px 0;
+}
+
+@media (min-width: $desktop-width) {
+  .page {
+    padding-top: 71px;
+    padding-bottom: 171px;
+  }
 }

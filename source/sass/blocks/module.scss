@@ -1,0 +1,145 @@
+.module__title {
+  position: relative;
+  margin: 0;
+  padding: 14px 37px 14px 69px;
+  font-size: 18px;
+  line-height: 23.4px;
+  font-weight: 300;
+  background-color: $background-neutral;
+  transition-duration: 400ms;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 24px;
+    transform: translateY(-50%);
+
+    width: 18px;
+    height: 2px;
+    background-color: $interactive;
+
+    transition-duration: 400ms;
+  }
+
+  &::after {
+    transform: translateY(-50%) rotate(90deg);
+  }
+}
+
+.module__button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.module__list {
+  margin: 0;
+  padding: 17px 0;
+  font-size: 15px;
+  line-height: 19.5px;
+  font-weight: 300;
+  list-style: none;
+  overflow: hidden;
+  transition-property: height;
+  transition-duration: 400ms;
+}
+
+.module__item {
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 0;
+
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: $accent;
+  }
+}
+
+.module--active {
+  .module__title {
+    background-color: $accent;
+    color: $text-invert;
+
+    &::before,
+    &::after {
+      background-color: $text-invert;
+    }
+
+    &::after {
+      transform: translateY(-50%);
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .module {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 80px;
+    padding-top: 30px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 140px;
+      height: 2px;
+      background-color: $accent;
+    }
+  }
+
+  .module__title {
+    padding: 0;
+    font-size: 32px;
+    line-height: 38.4px;
+    font-weight: 400;
+    background-color: transparent;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  .module__button {
+    display: none;
+  }
+
+  .module__list {
+    padding-top: 7px;
+    padding-bottom: 0;
+    font-size: 16px;
+    line-height: 19.2px;
+  }
+
+  .module--active {
+    .module__title {
+      background-color: transparent;
+      color: $text-basic;
+    }
+  }
+}
