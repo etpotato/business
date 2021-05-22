@@ -1,10 +1,7 @@
 module.exports = {
   mode: 'production',
   entry: {
-    index: [
-      './source/js/accordeon.js',
-      './source/js/api.js',
-    ],
+    index: './source/js/index.js',
   },
   devtool: 'source-map',
   output: {
