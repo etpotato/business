@@ -10,6 +10,16 @@ const onMediaChange = (evt) => {
     return;
   }
 
+
+  const activeTitles = Array.from(document.querySelectorAll('.module__title--active'));
+  if (activeTitles.length > 0) {
+    activeTitles.forEach((title) => {
+      const button = title.querySelector('.module__button');
+      button.setAttribute('aria-expanded', 'false');
+      title.classList.remove('module__title--active');
+    });
+  }
+
   const moduleListWrappers = Array.from(document.querySelectorAll('.module__list-wrapper'));
   moduleListWrappers.forEach((wrapper) => {
     wrapper.removeAttribute('style');

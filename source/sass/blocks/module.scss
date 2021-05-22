@@ -29,6 +29,20 @@
     transition-property: transform;
     transition-duration: 400ms;
   }
+
+  &--active {
+    background-color: $accent;
+    color: $text-invert;
+
+    &::before,
+    &::after {
+      background-color: $text-invert;
+    }
+
+    &::after {
+      transform: translateY(-50%) rotate(90deg) rotateY(90deg);
+    }
+  }
 }
 
 .module__button {
@@ -44,6 +58,14 @@
   margin: 0;
   background-color: transparent;
   border: none;
+}
+
+.module__button:not(:focus-visible) {
+  outline: none;
+}
+
+.module__button:focus-visible {
+  outline: none;
 }
 
 .module__list-wrapper {
@@ -85,22 +107,6 @@
   }
 }
 
-.module--active {
-  .module__title {
-    background-color: $accent;
-    color: $text-invert;
-
-    &::before,
-    &::after {
-      background-color: $text-invert;
-    }
-
-    &::after {
-      transform: translateY(-50%) rotate(90deg) rotateY(90deg);
-    }
-  }
-}
-
 @media (min-width: $tablet-width) {
   .module {
     position: relative;
@@ -132,6 +138,11 @@
     &::after {
       display: none;
     }
+
+    &--active {
+      background-color: transparent;
+      color: $text-basic;
+    }
   }
 
   .module__button {
@@ -148,13 +159,6 @@
     padding: 0;
     font-size: 16px;
     line-height: 19.2px;
-  }
-
-  .module--active {
-    .module__title {
-      background-color: transparent;
-      color: $text-basic;
-    }
   }
 }
 
