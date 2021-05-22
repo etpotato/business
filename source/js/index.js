@@ -10,9 +10,9 @@ const onMediaChange = (evt) => {
     return;
   }
 
-  const moduleLists = Array.from(document.querySelectorAll('.module__list'));
-  moduleLists.forEach((list) => {
-    list.removeAttribute('style');
+  const moduleListWrappers = Array.from(document.querySelectorAll('.module__list-wrapper'));
+  moduleListWrappers.forEach((wrapper) => {
+    wrapper.removeAttribute('style');
   });
 };
 

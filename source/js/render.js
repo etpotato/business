@@ -47,8 +47,11 @@ const renderModule = (data, number) => {
   title.classList.add('module__title');
   title.textContent = `${number + 1} модуль`;
   title.append(renderModuleButton());
+  const listWrapper = document.createElement('div');
+  listWrapper.classList.add('module__list-wrapper');
+  listWrapper.append(list);
 
-  module.append(title, list);
+  module.append(title, listWrapper);
   return module;
 };
 

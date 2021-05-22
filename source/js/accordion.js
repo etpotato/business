@@ -1,31 +1,26 @@
-const LIST_PADDING = 17;
-
 const onButtonClick = (evt) => {
   evt.preventDefault();
 
   const button = evt.target;
   const module = button.closest('.module');
-  const list = module.querySelector('.module__list');
+  const listWrapper = module.querySelector('.module__list-wrapper');
   const expanded = button.getAttribute('aria-expanded') === 'true';
 
   button.removeEventListener('click', onButtonClick);
 
   if (expanded) {
     module.classList.remove('module--active');
-    list.style.padding = 0;
-    list.style.maxHeight = 0;
+    listWrapper.style.maxHeight = 0;
 
-    list.addEventListener('transitionend', () => {
-      list.style.display = 'none';
+    listWrapper.addEventListener('transitionend', () => {
+      listWrapper.style.display = 'none';
       button.addEventListener('click', onButtonClick);
     }, { once: true });
   } else {
-    list.style.display = 'block';
-    requestAnimationFrame(() => module.classList.add('module--active'));
-    list.style.padding = `${LIST_PADDING}px 0`;
-    list.style.maxHeight = list.scrollHeight + (LIST_PADDING * 2) + 'px';
-
-    list.addEventListener('transitionend', () => {
+    listWrapper.style.display = 'block';
+    module.classList.add('module--active');
+    listWrapper.style.maxHeight = listWrapper.scrollHeight + 'px';
+    listWrapper.addEventListener('transitionend', () => {
       button.addEventListener('click', onButtonClick);
     }, { once: true });
   }
