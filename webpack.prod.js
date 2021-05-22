@@ -2,9 +2,8 @@ module.exports = {
   mode: 'production',
   entry: {
     index: [
-      './source/js/carousel.js',
+      './source/js/accordeon.js',
       './source/js/api.js',
-      './source/js/form.js',
     ],
   },
   devtool: 'source-map',

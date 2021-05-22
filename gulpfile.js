@@ -157,9 +157,7 @@ const watcher = () => {
 
 exports.default = gulp.series(
   clear,
-  gulp.parallel(html, styles, copy, webp, sprite,
-    // jsDev
-    ),
+  gulp.parallel(html, styles, copy, webp, sprite, jsDev),
   server,
   watcher
 );

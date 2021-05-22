@@ -1,11 +1,14 @@
 .module__title {
   position: relative;
+  display: flex;
+  flex-direction: column;
   margin: 0;
   padding: 14px 37px 14px 69px;
   font-size: 18px;
   line-height: 23.4px;
   font-weight: 300;
   background-color: $background-neutral;
+  transition-property: background-color, color;
   transition-duration: 400ms;
 
   &::before,
@@ -19,12 +22,12 @@
     width: 18px;
     height: 2px;
     background-color: $interactive;
-
-    transition-duration: 400ms;
   }
 
   &::after {
-    transform: translateY(-50%) rotate(90deg);
+    transform: translateY(-50%) rotate(90deg) rotateY(0);
+    transition-property: transform;
+    transition-duration: 400ms;
   }
 }
 
@@ -45,13 +48,14 @@
 
 .module__list {
   margin: 0;
-  padding: 17px 0;
+  padding: 0;
+  max-height: 0;
   font-size: 15px;
   line-height: 19.5px;
   font-weight: 300;
   list-style: none;
   overflow: hidden;
-  transition-property: height;
+  transition-property: max-height, padding;
   transition-duration: 400ms;
 }
 
@@ -88,8 +92,15 @@
     }
 
     &::after {
-      transform: translateY(-50%);
+      transform: translateY(-50%) rotate(90deg) rotateY(90deg);
     }
+  }
+
+  .module__list {
+    padding: 17px 0;
+    max-height: 100%;
+    transition-property: max-height, padding;
+    transition-duration: 400ms;
   }
 }
 

@@ -4,10 +4,6 @@
   min-height: 100vh;
 }
 
-.main__stream {
-  margin-bottom: 44px;
-}
-
 .main__stream-title {
   margin-top: 0;
   margin-bottom: 34px;
@@ -19,8 +15,8 @@
 .main__specialty {
   margin-bottom: 26px;
 
-  &:last-child {
-    margin-bottom: 0;
+  &:last-of-type {
+    margin-bottom: 44px;
   }
 }
 
@@ -89,10 +85,6 @@
 }
 
 @media (min-width: $desktop-width) {
-  .main__stream {
-    margin-bottom: 131px;
-  }
-
   .main__stream-title {
     margin: 0 auto 89px auto;
     font-size: 36px;
@@ -103,8 +95,8 @@
   .main__specialty {
     margin-bottom: 68px;
 
-    &:last-child {
-      margin-bottom: 0;
+    &:last-of-type {
+      margin-bottom: 131px;
     }
   }
 
