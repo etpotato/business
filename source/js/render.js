@@ -1,14 +1,11 @@
-import { onButtonClick } from './accordeon.js';
+import { onButtonClick } from './accordion.js';
 
 const SPECIALTY_NUMBER = 5;
 const MODULE_NUMBER = 2;
 const ITEM_NUMBER = 5;
+const ERROR_MESSAGE = 'Ошибка загрузки. Обновите\u00A0страницу';
 
-const supplyWrapper = document.querySelector('.main__supply-wrapper');
-
-const generateID = () => {
-  return `f${(~~(Math.random()*1e8)).toString(16)}`;
-};
+const progress = document.querySelector('.main__stream-progress');
 
 const getRundomFromArray = (array) => {
   return array[Math.floor(array.length * Math.random())];
@@ -17,15 +14,16 @@ const getRundomFromArray = (array) => {
 const renderModuleButton = () => {
   const button = document.createElement('button');
   button.classList.add('module__button');
+  button.type = 'button';
+  button.ariaExpanded = 'false';
   button.innerHTML = '<span class="visually-hidden">Открыть/скрыть секцию</span>';
   button.addEventListener('click', onButtonClick);
   return button;
 };
 
-const renderModuleList = (data, ID) => {
+const renderModuleList = (data) => {
   const list = document.createElement('ul');
   list.classList.add('module__list');
-  list.id = ID;
   data.forEach((dataItem) => {
     const item = document.createElement('li');
     item.classList.add('module__item');
@@ -37,8 +35,7 @@ const renderModuleList = (data, ID) => {
 
 const renderModule = (data, number) => {
   const itemsData = data.specializedSubjects.slice(number * ITEM_NUMBER, (number * ITEM_NUMBER + ITEM_NUMBER));
-  const id = generateID();
-  const list = renderModuleList(itemsData, id);
+  const list = renderModuleList(itemsData);
 
   if (list.childNodes.length === 0) {
     return '';
@@ -79,9 +76,9 @@ const renderSpecialties = (data) => {
 
   let j = 0;
   function render () {
-    supplyWrapper.before(renderSpecialty(dataSlice[j]));
+    progress.before(renderSpecialty(dataSlice[j]));
     j++;
-    if (j >= dataSlice.length - 1) {
+    if (j >= dataSlice.length) {
       return;
     }
     requestAnimationFrame(render);
@@ -90,4 +87,12 @@ const renderSpecialties = (data) => {
   render();
 };
 
-export { renderSpecialties };
+const renderError = () => {
+  const error = document.createElement('p');
+  error.classList.add('main__stream-error');
+  error.textContent = ERROR_MESSAGE;
+
+  progress.before(error);
+};
+
+export { renderSpecialties, renderError };
