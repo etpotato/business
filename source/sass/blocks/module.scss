@@ -101,17 +101,15 @@
     display: block;
     padding: 17px 0;
     max-height: 100%;
-    transition-property: max-height, padding;
-    transition-duration: 400ms;
   }
 }
 
-@media (min-width: $desktop-width) {
+@media (min-width: $tablet-width) {
   .module {
     position: relative;
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-gap: 80px;
+    grid-gap: 40px;
     padding-top: 30px;
 
     &::before {
@@ -131,6 +129,7 @@
     line-height: 38.4px;
     font-weight: 400;
     background-color: transparent;
+    transition: none;
 
     &::before,
     &::after {
@@ -156,5 +155,11 @@
       background-color: transparent;
       color: $text-basic;
     }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .module {
+    grid-gap: 80px;
   }
 }

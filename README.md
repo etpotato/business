@@ -1,1 +1,1 @@
-business page
+https://etpotato.github.io/business/

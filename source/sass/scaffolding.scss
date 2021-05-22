@@ -37,8 +37,7 @@ body {
   max-width: $container-mobile;
 }
 
-
-@media (min-width: $desktop-width) {
+@media (min-width: $tablet-width) {
   body {
     color: $text-basic;
   }
