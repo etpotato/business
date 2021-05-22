@@ -27,7 +27,6 @@ const renderModuleList = (data, ID) => {
   const list = document.createElement('ul');
   list.classList.add('module__list');
   list.id = ID;
-  list.style.display = 'none';
   data.forEach((dataItem) => {
     const item = document.createElement('li');
     item.classList.add('module__item');

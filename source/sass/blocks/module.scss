@@ -47,6 +47,7 @@
 }
 
 .module__list {
+  display: none;
   margin: 0;
   padding: 0;
   max-height: 0;
@@ -97,6 +98,7 @@
   }
 
   .module__list {
+    display: block;
     padding: 17px 0;
     max-height: 100%;
     transition-property: max-height, padding;
@@ -141,8 +143,10 @@
   }
 
   .module__list {
+    display: block;
     padding-top: 7px;
     padding-bottom: 0;
+    max-height: 100%;
     font-size: 16px;
     line-height: 19.2px;
   }
